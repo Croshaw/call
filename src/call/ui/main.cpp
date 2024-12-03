@@ -1,13 +1,3 @@
-//
-// Created by croshaw on 11/25/24.
-//
+#include "call_app.hpp"
 
-#include <QApplication>
-#include "lexer.h"
-
-int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
-    lexer mainWindow;
-    mainWindow.show();
-    return app.exec();
-}
+wxIMPLEMENT_APP(cui::call_app);
