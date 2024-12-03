@@ -13,6 +13,11 @@
 #include "interpreter.hpp"
 
 namespace call {
+    const static settings DEFAULT(
+            {"program", "var", "int", "float", "bool", "begin", "end", "if", "then", "else", "while", "do", "for", "to",
+             "read", "write", "true", "false", "or", "and", "as", "not"},
+            {".", ";", ",", ":", "(", ")", "[", "]", "+", "-", "*", "/", "=", ">", "<", "<=", ">=", "<>", "\n",});
+
     class call {
     private:
         const std::string &_source;

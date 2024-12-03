@@ -14,7 +14,7 @@ namespace call {
     }
 
     void parser::read_next() {
-        if (_ind < _tokens.size())
+        if (_ind < _tokens.size() - 1)
             _ind++;
         read();
     }
@@ -327,6 +327,8 @@ namespace call {
     void parser::parse() {
         _actions.clear();
         _ind = 0;
+        if (_tokens.empty())
+            return;
         read();
         start();
     }

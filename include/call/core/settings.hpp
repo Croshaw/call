@@ -30,6 +30,8 @@ namespace call {
     private:
         std::map<table_type, table> _tables;
     public:
+        settings(const settings &other) : settings(other._tables.at(RESERVED), other._tables.at(SEPARATORS)) {}
+
         settings(const table &reserved, const table &separators) {
             _tables[RESERVED] = reserved;
             _tables[SEPARATORS] = separators;
@@ -46,7 +48,7 @@ namespace call {
             return _tables.at(type);
         }
 
-        size_t find(table_type table, const std::string &value) {
+        size_t find(table_type table, const std::string &value) const {
             auto &t = get(table);
             auto it = std::find(t.begin(), t.end(), value);
             if (it == t.end())
